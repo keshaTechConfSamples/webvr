@@ -1,0 +1,48 @@
+
+
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+
+
+</head>
+<body>
+<a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position>
+    <a-assets>
+        <img id="skyTexture" src="https://i.imgur.com/Szs9f7E.jpg">
+
+        <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"
+               autoplay
+               preload></audio>
+
+        <img id="thumbProblems" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/mountains.png">
+        <img id="thumbProbString" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/sunrise.png">
+    </a-assets>
+
+    <a-sky src="#skyTexture"></a-sky>
+
+    <a-link href="aframedemo.html" position="-5 3 -5" image="#thumbProblems"></a-link>
+    <a-link href="sumProblem.html" position="5 3 -5" image="#thumbProbString"></a-link>
+
+
+    <a-text
+            text="font: sourcecodepro;value:
+                        def sumProblemString(x, y):
+                        sum = x + y
+                        return 'The sum of {} and {} is {}.'.format(x, y, sum)
+                    ; width:2.5;"
+            position="-2 3 -3"
+            color="#FFFFFF"
+            rotation="0 0 0"
+            scale="2 2 2">
+
+        <a-animation attribute="position"
+                     to="-2 2.2 -3"
+                     direction="alternate"
+                     dur="2000"
+                     repeat="3">
+        </a-animation>
+    </a-text>
+</a-scene>
+</body>
+</html>
